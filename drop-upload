@@ -7,7 +7,7 @@ param (
 [Alias("f")]
 [string]$SourceFilePath
 ) 
-$db = sl.Bsl0TKGHNfUr0owbPC_5hgo20NPHLMqC7nFSxOn5YPknjbWbi1JaMe5SBDRFYtRUNo26wQpExQ6fTZeYfhM3-jK3AmlBFcoBWWs_rk2fq11mG6AcPWvPwhqBq3PS4YEhKClEa7igPndbo24
+$db = 'sl.Bsl0TKGHNfUr0owbPC_5hgo20NPHLMqC7nFSxOn5YPknjbWbi1JaMe5SBDRFYtRUNo26wQpExQ6fTZeYfhM3-jK3AmlBFcoBWWs_rk2fq11mG6AcPWvPwhqBq3PS4YEhKClEa7igPndbo24'
 $outputFile = Split-Path $SourceFilePath -leaf
 $TargetFilePath="/$outputFile"
 $arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
