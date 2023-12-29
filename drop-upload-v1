@@ -7,10 +7,11 @@ param (
 [Alias("f")]
 [string]$SourceFilePath
 ) 
+$DropBoxAccessToken = $db
 $outputFile = Split-Path $SourceFilePath -leaf
 $TargetFilePath="/$outputFile"
 $arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
-$authorization = "Bearer sl.BsqjQd3PsaRDEuQo-ZaYCq7LrE1R2WdoBBOHoj6PFkvO3XoauYZ7uinOXe-NUUSzXY3sZxPAYLkFSQxWpi8RgR7wPTUdV9VwR6kL2nr53iV-E8FN23YWYr-IJ1ithW2PZUVJCmphvAMgXA8"
+$authorization = "Bearer " + $DropBoxAccessToken
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", $authorization)
 $headers.Add("Dropbox-API-Arg", $arg)
