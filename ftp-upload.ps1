@@ -14,7 +14,7 @@ function ftp-upload {
         $webClient.UploadFile("ftp://ftp.zigflip.fun/log/a.zip", "c:\a.zip")
 
         Write-Host "Le fichier a été uploadé avec succès."
-        Write-Host $ftpServer
+        Write-Host "$ftpServer"
         Write-Host $remotePath
         Write-Host $ftpUsername
         Write-Host $ftpPassword
