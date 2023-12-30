@@ -18,7 +18,7 @@ function ftp-upload {
         Write-Host $remotePath
         Write-Host $ftpUsername
         Write-Host $ftpPassword
-        Write-Host $localFilePath
+        Write-Host "$localFilePath"
     }
     catch {
         Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
