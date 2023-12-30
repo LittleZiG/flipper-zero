@@ -8,10 +8,11 @@ param (
 [string]$SourceFilePath
 ) 
 $dbb = "sl.BstyyLu6R4kvXImPfLoUeAsbr7JclaqRmFPeeN3pxE2Bks0GKKoc8jjZRcTXIt2QGmwZxc7nTGfzmIhrPN6BdgtIgj0ysOfRooSxSTMY8l4725jNOAAga5oh3JZoE_qc-b1UCJSBmmDY2xM"
+$dba = "$dbb"
 $outputFile = Split-Path $SourceFilePath -leaf
 $TargetFilePath="/$outputFile"
 $arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
-$authorization = "Bearer " + $dbb
+$authorization = "Bearer " + $dba
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", $authorization)
 $headers.Add("Dropbox-API-Arg", $arg)
