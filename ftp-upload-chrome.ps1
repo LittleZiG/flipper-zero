@@ -4,18 +4,22 @@ function ftp-upload {
         [string]$remotePath,
         [string]$ftpUsername,
         [string]$ftpPassword,
-        [string]$localFilePath
+        [string]$fileupload
     )
 
     try {
+        $outputFile = Split-Path $fileupload -leaf
+    
         $webClient = New-Object System.Net.WebClient
-        $webClient.Credentials = New-Object System.Net.NetworkCredential('zigfl2268087', 'M0tdep@ssezig')
+        $webClient.Credentials = New-Object System.Net.NetworkCredential($ftpUsername, $ftpPassword)
         
-        $webClient.UploadFile("ftp://ftp.zigflip.fun/log/a.zip", "c:\a.zip")
+        $webClient.UploadFile("ftp://ftp.zigflip.fun/log/" + $outpuFile, $fileupload)
 
         Write-Host "Le fichier a été uploadé avec succès."
     }
     catch {
+        Write-Host "Chemin de fileupload : $fileupload"
+        Write-Host "login et pass  : $ftpUsername $ftpPassword"
         Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
     }
     finally {
