@@ -17,7 +17,7 @@ function ftp-upload {
     }
     catch {
         Write-Host "Chemin de fileupload : $fileupload"
-        Write-Host "Chemin du remote pass : $remotePath"
+        Write-Host "login et pass  : $ftpUsername $ftpPassword"
         Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
     }
     finally {
