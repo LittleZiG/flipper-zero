@@ -590,7 +590,7 @@ function ftp-upload {
     }
 }
 
-ftp-upload -ftpServer $ftpServer -remotePath $remotePath -ftpUsername 'zigfl2268087' -ftpPassword 'M0tdep@ssezig' -fileupload $env:TEMP\$ZIP
+ftp-upload -ftpServer $ftpServer -remotePath $remotePath -ftpUsername "zigfl2268087" -ftpPassword "M0tdep@ssezig" -fileupload "$env:TEMP\$ZIP"
 
 #################################################################################################
 
