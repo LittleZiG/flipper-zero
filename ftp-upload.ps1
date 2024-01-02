@@ -16,6 +16,7 @@ function ftp-upload {
         Write-Host "Le fichier a été uploadé avec succès."
     }
     catch {
+        Write-Host $localFilePath
         Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
     }
     finally {
