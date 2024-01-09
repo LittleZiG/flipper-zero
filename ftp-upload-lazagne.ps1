@@ -20,8 +20,11 @@ function ftp-upload {
         Write-Host "Le fichier a été uploadé avec succès."
     }
     catch {
-        Write-Host "Chemin de fileupload : $fileupload"
+        Write-Host "fileupload : $fileupload"
         Write-Host "outpufile  : $outputFile"
+	Write-Host "filecontent  : $fileContent"
+ 	Write-Host "log et pass : $ftpUsername $ftpPassword"
+	
         Write-Host "Erreur lors de l'upload du fichier : $_.Exception.Message"
     }
     finally {
