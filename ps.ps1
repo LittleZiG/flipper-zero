@@ -5,7 +5,7 @@
 #  \__, |\___/ \__,_(_)_|\_\_| |_|\___/ \_/\_/  
 #  |___/                                        
 
-$basePath = "C:\Users\Public\"
+$basePath = "C:\temp\"
 $dumpFolder = "$basePath\$env:USERNAME-$(get-date -f yyyy-MM-dd)"
 $dumpFile = "$dumpFolder.zip"
 
